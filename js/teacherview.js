@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    var studentTableBody = $("#studentTableBody");
+    var lecturerTableBody = $("#lecturerTableBody");
 
     $.ajax({
         type: 'GET',
@@ -13,19 +13,19 @@ $(document).ready(function () {
 
             decrypted.forEach(function (decrypted){
 
-              studentTableBody.append(
-                "<tr>" +
-                "<td>" + decrypted.code + "</td>" +
-                "<td>" + /*course.reviewAverage*/ +"</td>" +
-                "<td> <button class='btn btn-default toLecture' data-LectureCode=" + decrypted.displaytext + ">vis</button> </td>" +
-                "</tr"
-              );
-
+                lecturerTableBody.append(
+                    "<tr>" +
+                    "<td>" + decrypted.code + "</td>" +
+                    "<td>" + /*course.reviewAverage*/ +"</td>" +
+                    "<td> <button class='btn btn-default toLecture' data-LectureCode=" + decrypted.displaytext + ">vis</button> </td>" +
+                    "</tr"
+                );
             });
         },
         error: function (course) {
             alert('Failed!');
         }
+
 
     })
 

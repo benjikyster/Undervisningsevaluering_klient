@@ -1,5 +1,4 @@
-
-  $(document).ready(function () {
+$(document).ready(function () {
 
       var studentTableBody = $("#studentTableBody");
 
@@ -28,5 +27,5 @@
           }
 
       })
-
+      
   });

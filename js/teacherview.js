@@ -16,17 +16,22 @@ $(document).ready(function () {
                 lecturerTableBody.append(
                     "<tr>" +
                     "<td>" + decrypted.code + "</td>" +
-                    "<td>" + /*course.reviewAverage*/ +"</td>" +
-                    "<td> <button class='btn btn-default toLecture' data-LectureCode=" + decrypted.displaytext + ">vis</button> </td>" +
-                    "</tr"
+                    "<td> <class='btn-row'><button class='btn btn-default toComment' data-lecture=" + decrypted.displaytext + ">Klik for at gå til kommentarer</button></td>" +
+              "</tr"
                 );
-            });
+
+            })
         },
         error: function (course) {
             alert('Failed!');
         }
 
 
-    })
+    });
 
+})
+
+$('#lecturerTableBody').on('click','.toComment',function(e){
+  var lectureCode = $(this).data("lecture");
+  window.location.href = "underviserLectureView.html#" + lectureCode;
 });

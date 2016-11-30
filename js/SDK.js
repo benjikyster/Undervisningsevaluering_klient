@@ -33,7 +33,7 @@ var SDK = {
 
                 //else if(user.type == "admin") {
               //   window.location.href = administratorView.html";
-               }
+              // }
 
            },
            error: function(res) { alert('Failed!'); },

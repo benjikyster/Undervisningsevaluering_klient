@@ -16,8 +16,9 @@ $(document).ready(function () {
                   "<tr>" +
                   "<td>" + decrypted.code + "</td>" +
                   "<td>" + /*course.reviewAverage*/ +"</td>" +
-                  "<td> <button class='btn btn-default toLecture' data-LectureCode=" + decrypted.displaytext + ">Klik for at se lektioner</button> </td>" +
+                  "<td class='btn btn-default toLecture' data-LectureCode=" + decrypted.displaytext + ">Klik for at se lektioner</button> </td>" +
                   "</tr"
+
                 );
 
               });
@@ -27,5 +28,9 @@ $(document).ready(function () {
           }
 
       })
-      
+
+  });
+  $('#studentTableBody').on('click','.toLecture',function(e){
+    var lectureCode = $(this).data("lecture");
+    window.location.href = "studerendeLectureView.html#" + lectureCode;
   });

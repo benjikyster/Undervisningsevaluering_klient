@@ -25,17 +25,16 @@ var SDK = {
              var userId = user.id
              console.log(user.type);
              SDK.Storage.persist("userId", userId);
+             SDK.Storage.persist("userType", user.type);
                if (user.type == "student") {
                  window.location.href = "studerendeView.html";
                } else if(user.type == "teacher") {
                  window.location.href = "underviserView.html";
                }
-
-                //else if(user.type == "admin") {
-              //   window.location.href = administratorView.html";
-              // }
-
-           },
+               else if(user.type == "admin") {
+                 window.location.href ="adminView.html";
+               }
+            },
            error: function(res) { alert('Failed!'); },
        });
 

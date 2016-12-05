@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    var lecturerTableBody = $("#adminTableBody");
+    var adminTableBody = $("#adminTableBody");
 
     $.ajax({
         type: 'GET',
@@ -16,7 +16,7 @@ $(document).ready(function () {
                 adminTableBody.append(
                     "<tr>" +
                     "<td>" + decrypted.code + "</td>" +
-                    "<td> <class='btn-row'><button class='btn btn-default toLecture' data-lecture=" + decrypted.displaytext + ">Klik for at gå til kommentarer</button></td>" +
+                    "<td class='btn-row'> <button class='btn btn-default toLecture' data-lecture=" + decrypted.displaytext + ">Klik for at se lektioner</button> </td>" +
               "</tr"
                 );
 

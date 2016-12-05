@@ -18,7 +18,7 @@ var btn;
 if(decrypted.userId == SDK.Storage.load("userId")) {
   btn = "<button class='btn btn-default toDelete' data-id=" + decrypted.id+ ">Slet</button>"
 } else {
-  btn = "<button class ='btn btn-danger' data-id=" + decrypted.id+ ">Kan ikke slette</button>"
+  btn = "<button class ='btn btn-default' data-id=" + decrypted.id+ ">Kan ikke slette</button>"
 }
 
            table.append(

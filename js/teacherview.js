@@ -16,7 +16,7 @@ $(document).ready(function () {
                 lecturerTableBody.append(
                     "<tr>" +
                     "<td>" + decrypted.code + "</td>" +
-                    "<td> <class='btn-row'><button class='btn btn-default toComment' data-lecture=" + decrypted.displaytext + ">Klik for at gå til kommentarer</button></td>" +
+                    "<td class='btn-row'><button class='btn btn-default toComment' data-lecture=" + decrypted.displaytext + ">Klik for at gå til kommentarer</button></td>" +
               "</tr"
                 );
 

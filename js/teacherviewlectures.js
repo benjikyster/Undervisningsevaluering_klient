@@ -1,6 +1,6 @@
 $(document).ready(function () {
    var lectureCode = location.hash.replace('#', '');
-   var lectureTableBody = $("#lecturerLectureTableBody")
+   var lectureTableBody = $("#teacherLectureTableBody")
 
    $.ajax({
        type: "GET",
@@ -8,7 +8,7 @@ $(document).ready(function () {
        dataType: "json",
        success: function(lectures){
          var decrypted = $.parseJSON(SDK.Decrypt(lectures))
-         var table = $("#lecturerLectureTableBody");
+         var table = $("#teacherLectureTableBody");
         console.log(decrypted);
 
          decrypted.forEach(function (decrypted) {
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
  })
 
- $("#lecturerLectureTableBody").on('click','.toReview',function(e){
+ $("#teacherLectureTableBody").on('click','.toReview',function(e){
    var id = $(this).data("id");
   window.location.href = "underviserReview.html#" + id;
  });

@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    var lecturerTableBody = $("#lecturerTableBody");
+    var TeacherTableBody = $("#TeacherTableBody");
 
     $.ajax({
         type: 'GET',
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
             decrypted.forEach(function (decrypted){
 
-                lecturerTableBody.append(
+                TeacherTableBody.append(
                     "<tr>" +
                     "<td>" + decrypted.code + "</td>" +
                     "<td class='btn-row'><button class='btn btn-default toComment' data-lecture=" + decrypted.displaytext + ">Klik for at gå til kommentarer</button></td>" +
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 })
 
-$('#lecturerTableBody').on('click','.toComment',function(e){
+$('#TeacherTableBody').on('click','.toComment',function(e){
   var lectureCode = $(this).data("lecture");
   window.location.href = "underviserLectureView.html#" + lectureCode;
 });

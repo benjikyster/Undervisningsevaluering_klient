@@ -1,6 +1,6 @@
 $(document).ready(function () {
    var lectureCode = location.hash.replace('#', '');
-   var lectureTableBody = $("#adminLectureTableBody")
+   var lectureTableBody = $("#administratorLectureTableBody")
 
    $.ajax({
        type: "GET",
@@ -8,7 +8,7 @@ $(document).ready(function () {
        dataType: "json",
        success: function(lectures){
          var decrypted = $.parseJSON(SDK.Decrypt(lectures))
-         var table = $("#adminLectureTableBody");
+         var table = $("#administratorLectureTableBody");
         console.log(decrypted);
 
          decrypted.forEach(function (decrypted) {
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
  })
 
- $("#adminLectureTableBody").on('click','.toReview',function(e){
+ $("#administratorLectureTableBody").on('click','.toReview',function(e){
    var id = $(this).data("id");
   window.location.href = "adminReview.html#" + id;
  });

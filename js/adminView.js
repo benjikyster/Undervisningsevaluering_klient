@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    var adminTableBody = $("#adminTableBody");
+    var administratorTableBody = $("#administratorTableBody");
 
     $.ajax({
         type: 'GET',
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
             decrypted.forEach(function (decrypted){
 
-                adminTableBody.append(
+                administratorTableBody.append(
                     "<tr>" +
                     "<td>" + decrypted.code + "</td>" +
                     "<td class='btn-row'> <button class='btn btn-default toLecture' data-lecture=" + decrypted.displaytext + ">Klik for at se lektioner</button> </td>" +
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 })
 
-$('#adminTableBody').on('click','.toLecture',function(e){
+$('#administratorTableBody').on('click','.toLecture',function(e){
   var lectureCode = $(this).data("lecture");
   window.location.href = "adminLectureView.html#" + lectureCode;
 });

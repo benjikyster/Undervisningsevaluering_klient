@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-      var studentTableBody = $("#studentTableBody");
+      var studerendeTableBody = $("#studerendeTableBody");
 
       $.ajax({
           type: 'GET',
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
               decrypted.forEach(function (decrypted){
 
-                studentTableBody.append(
+                studerendeTableBody.append(
                   "<tr>" +
                   "<td>" + decrypted.code + "</td>" +
                   "<td class='btn-row'> <button class='btn btn-default toLecture' data-lecture=" + decrypted.displaytext + ">Klik for at gå til lektioner</button> </td>" +
@@ -29,7 +29,7 @@ $(document).ready(function () {
       })
 
   });
-  $('#studentTableBody').on('click','.toLecture',function(e){
+  $('#studerendeTableBody').on('click','.toLecture',function(e){
     var lectureCode = $(this).data("lecture");
     window.location.href = "studerendeLectureView.html#" + lectureCode;
   });
